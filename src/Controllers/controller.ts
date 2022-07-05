@@ -8,7 +8,7 @@ export function test (req: any, res: any ) {
 
 export async function getRovers(req: any, res: any) {
     const response = await axios({
-        url: apiConfig.baseUrl + "?" + apiConfig.defaultSol + "&api_key=" + apiConfig.apiKey,
+        url: apiConfig.BASE_URL + "?" + apiConfig.DEFAULT_SOL + "&api_key=" + apiConfig.API_KEY,
         method: "get",
     });
     res.send(response?.data);
@@ -17,7 +17,7 @@ export async function getRovers(req: any, res: any) {
 
 export async function getRoverPhotos(req: any, res: any) {
     const response = await axios({
-        url: apiConfig.baseUrl + "/"
+        url: apiConfig.BASE_URL + "/"
             + req.params.rover_name
             + "/photos?sol="
             + req.params.sol
@@ -26,7 +26,7 @@ export async function getRoverPhotos(req: any, res: any) {
             + "&page="
             + req.params.page
             + "&api_key="
-            + apiConfig.apiKey,
+            + apiConfig.API_KEY,
         method: "get",
     });
 
